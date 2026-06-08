@@ -28,65 +28,231 @@
             user-select: none;
         }
 
-        .header { text-align: center; margin-bottom: 24px; }
-        .header h1 { font-size: 22px; margin: 0 0 8px 0; font-weight: 700; }
-        .header p { font-size: 14px; color: var(--text-muted); margin: 0; }
-        .quiz-container { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
-        .step { display: none; }
-        .step.active { display: flex; flex-direction: column; }
-        .question-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; text-align: center; }
-        .options-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-        .option-card { background-color: var(--surface-color); border: 2px solid transparent; border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.2s ease; }
-        .option-card.selected { border-color: var(--accent-color); background-color: rgba(255, 59, 48, 0.1); }
-        .option-text { font-size: 16px; font-weight: 500; }
-        .option-price { font-size: 14px; color: var(--text-muted); }
-        .result-box { background-color: var(--surface-color); border-radius: 16px; padding: 24px; text-align: center; margin-bottom: 24px; }
-        .result-price { font-size: 26px; font-weight: 800; color: var(--accent-color); margin: 12px 0; }
-        .summary-list { text-align: left; color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-top: 16px; padding-left: 20px; }
-        .nav-buttons { margin-top: 24px; display: flex; gap: 12px; }
-        button { flex: 1; padding: 16px; border-radius: 12px; border: none; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
-        .btn-secondary { background-color: var(--surface-color); color: var(--text-color); }
-        .btn-primary { background-color: var(--accent-color); color: #ffffff; }
-        button:disabled { opacity: 0.3; cursor: not-allowed; }
-        .progress-bar { height: 4px; background-color: var(--surface-color); border-radius: 2px; margin-bottom: 24px; overflow: hidden; }
-        .progress-fill { height: 100%; background-color: var(--accent-color); width: 10%; transition: width 0.3s ease; }
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .quiz-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .option-card {
+            background-color: var(--surface-color);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-card.selected {
+            border-color: var(--accent-color);
+            background-color: rgba(255, 59, 48, 0.1);
+        }
+
+        .option-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .option-price {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .result-box {
+            background-color: var(--surface-color);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .result-price {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin: 12px 0;
+        }
+
+        .summary-list {
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 16px;
+            padding-left: 20px;
+        }
+
+        .nav-buttons {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+        }
+
+        button {
+            flex: 1;
+            padding: 16px;
+            border-radius: 12px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-secondary {
+            background-color: var(--surface-color);
+            color: var(--text-color);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #ffffff;
+        }
+
+        button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: var(--surface-color);
+            border-radius: 2px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 10%;
+            transition: width 0.3s ease;
+        }
     </style>
 </head>
 <body>
-    <div class="header"><h1>Unnamed Tattoo</h1><p>Калькулятор стоимости сеанса</p></div>
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="header">
+        <h1>Unnamed Tattoo</h1>
+        <p>Калькулятор стоимости сеанса</p>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
     <div class="quiz-container">
         <div class="step active" id="step1">
             <div class="question-title">Примерный размер татуировки:</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 1, 'Мини (от 5 - до 10 см)', 1000, 4000)"><span class="option-text">Мини (от 5 - до 10 см)</span><span class="option-price">от 1 000 руб.</span></div>
-                <div class="option-card" onclick="selectOption(this, 1, 'Средняя (от 10 - до 20 см)', 4000, 10000)"><span class="option-text">Средняя (от 10 - до 20 см)</span><span class="option-price">от 4 000 руб.</span></div>
-                <div class="option-card" onclick="selectOption(this, 1, 'Большая (от 20 - до 40 см)', 10000, 25000)"><span class="option-text">Большая (от 20 - до 40 см)</span><span class="option-price">от 10 000 руб.</span></div>
+                <div class="option-card" onclick="selectOption(this, 1, 'Мини (от 5 - до 10 см)', 1000, 4000)">
+                    <span class="option-text">Мини (от 5 - до 10 см)</span>
+                    <span class="option-price">от 1 000 руб.</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 1, 'Средняя (от 10 - до 20 см)', 4000, 10000)">
+                    <span class="option-text">Средняя (от 10 - до 20 см)</span>
+                    <span class="option-price">от 4 000 руб.</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 1, 'Большая (от 20 - до 40 см)', 10000, 25000)">
+                    <span class="option-text">Большая (от 20 - до 40 см)</span>
+                    <span class="option-price">от 10 000 руб.</span>
+                </div>
             </div>
         </div>
+
         <div class="step" id="step2">
             <div class="question-title">Что у вас с эскизом?</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 2, 'Эскиз имеется', 0, 0)"><span class="option-text">Эскиз имеется</span><span class="option-price">+0%</span></div>
-                <div class="option-card" onclick="selectOption(this, 2, 'Нужно нарисовать эскиз', 25, 25)"><span class="option-text">Нужно нарисовать</span><span class="option-price">+25%</span></div>
+                <div class="option-card" onclick="selectOption(this, 2, 'Эскиз имеется', 0, 0)">
+                    <span class="option-text">Эскиз имеется</span>
+                    <span class="option-price">+0%</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 2, 'Нужно нарисовать эскиз', 25, 25)">
+                    <span class="option-text">Нужно нарисовать</span>
+                    <span class="option-price">+25%</span>
+                </div>
             </div>
         </div>
+
         <div class="step" id="step3">
             <div class="question-title">Выберите стиль исполнения:</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 3, 'Графика / Эскизный', 0, 0)"><span class="option-text">Графика / Эскизный</span><span class="option-price">+0%</span></div>
-                <div class="option-card" onclick="selectOption(this, 3, 'Киберпанк / Орнаментал', 20, 20)"><span class="option-text">Киберпанк / Орнаментал</span><span class="option-price">+20%</span></div>
-                <div class="option-card" onclick="selectOption(this, 3, 'Реализм / Блэкворк', 40, 40)"><span class="option-text">Реализм / Блэкворк</span><span class="option-price">+40%</span></div>
+                <div class="option-card" onclick="selectOption(this, 3, 'Графика / Эскизный', 0, 0)">
+                    <span class="option-text">Графика / Эскизный</span>
+                    <span class="option-price">+0%</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 3, 'Киберпанк / Орнаментал', 20, 20)">
+                    <span class="option-text">Киберпанк / Орнаментал</span>
+                    <span class="option-price">+20%</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 3, 'Реализм / Блэкворк', 40, 40)">
+                    <span class="option-text">Реализм / Блэкворк</span>
+                    <span class="option-price">+40%</span>
+                </div>
             </div>
         </div>
+
         <div class="step" id="step4">
             <div class="question-title">Куда планируете наносить?</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 4, 'Рука / Нога (простая зона)', 0, 0)"><span class="option-text">Рука / Нога</span><span class="option-price">+0%</span></div>
-                <div class="option-card" onclick="selectOption(this, 4, 'Спина / Грудь (большая зона)', 20, 20)"><span class="option-text">Спина / Грудь</span><span class="option-price">+20%</span></div>
-                <div class="option-card" onclick="selectOption(this, 4, 'Ребра / Живот / Шея (сложная зона)', 30, 30)"><span class="option-text">Ребра / Живот / Шея</span><span class="option-price">+30%</span></div>
+                <div class="option-card" onclick="selectOption(this, 4, 'Рука / Нога (простая зона)', 0, 0)">
+                    <span class="option-text">Рука / Нога</span>
+                    <span class="option-price">+0%</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 4, 'Спина / Грудь (большая зона)', 20, 20)">
+                    <span class="option-text">Спина / Грудь</span>
+                    <span class="option-price">+20%</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 4, 'Ребра / Живот / Шея (сложная зона)', 30, 30)">
+                    <span class="option-text">Ребра / Живот / Шея</span>
+                    <span class="option-price">+30%</span>
+                </div>
             </div>
         </div>
+
         <div class="step" id="step5">
             <div class="result-box">
                 <div class="question-title">Предварительный расчет:</div>
@@ -96,55 +262,140 @@
             </div>
         </div>
     </div>
+
     <div class="nav-buttons" id="navButtonsBlock">
         <button class="btn-secondary" id="btnBack" onclick="changeStep(-1)" disabled>Назад</button>
         <button class="btn-primary" id="btnNext" onclick="changeStep(1)" disabled>Далее</button>
     </div>
+
     <script>
         const tg = typeof window !== 'undefined' && window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
-        if (tg) { try { tg.expand(); tg.ready(); } catch (e) {} }
-        let currentStep = 1; const totalSteps = 5;
-        const answers = { size: { text: '', minVal: 0, maxVal: 0 }, sketch: { text: '', minVal: 0, maxVal: 0 }, style: { text: '', minVal: 0, maxVal: 0 }, place: { text: '', minVal: 0, maxVal: 0 } };
+        
+        if (tg) {
+            try {
+                tg.expand();
+                tg.ready();
+            } catch (e) {
+                console.log("Ожидание среды Telegram...");
+            }
+        }
+
+        let currentStep = 1;
+        const totalSteps = 5;
+        
+        const answers = {
+            size: { text: '', minVal: 0, maxVal: 0 },
+            sketch: { text: '', minVal: 0, maxVal: 0 },
+            style: { text: '', minVal: 0, maxVal: 0 },
+            place: { text: '', minVal: 0, maxVal: 0 }
+        };
+
         function selectOption(element, step, text, minVal, maxVal) {
             const currentStepEl = document.getElementById(`step${step}`);
-            for (let card of currentStepEl.getElementsByClassName('option-card')) card.classList.remove('selected');
+            const cards = currentStepEl.getElementsByClassName('option-card');
+            for (let card of cards) {
+                card.classList.remove('selected');
+            }
+
             element.classList.add('selected');
+
             if (step === 1) answers.size = { text, minVal, maxVal };
             if (step === 2) answers.sketch = { text, minVal, maxVal };
             if (step === 3) answers.style = { text, minVal, maxVal };
             if (step === 4) answers.place = { text, minVal, maxVal };
-            document.getElementById('btnNext').disabled = false;
+
+            const nextBtn = document.getElementById('btnNext');
+            nextBtn.removeAttribute('disabled');
+            nextBtn.disabled = false;
         }
+
         function changeStep(direction) {
             document.getElementById(`step${currentStep}`).classList.remove('active');
             currentStep += direction;
             document.getElementById(`step${currentStep}`).classList.add('active');
-            document.getElementById('progressFill').style.width = `${((currentStep - 1) / (totalSteps - 1)) * 100}%`;
-            document.getElementById('btnBack').disabled = (currentStep === 1);
+
+            const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            document.getElementById('progressFill').style.width = `${progressPercent === 0 ? 10 : progressPercent}%`;
+
+            const backBtn = document.getElementById('btnBack');
             const nextBtn = document.getElementById('btnNext');
+
+            if (currentStep === 1) {
+                backBtn.setAttribute('disabled', 'true');
+                backBtn.disabled = true;
+            } else {
+                backBtn.removeAttribute('disabled');
+                backBtn.disabled = false;
+            }
+
             if (currentStep === totalSteps) {
                 calculateResult();
                 nextBtn.innerText = "Отправить мастеру";
+                nextBtn.removeAttribute('disabled');
+                nextBtn.disabled = false;
                 nextBtn.onclick = finalSubmit;
             } else {
                 nextBtn.innerText = "Далее";
                 nextBtn.onclick = function() { changeStep(1); };
+
+                const hasAnswer = (currentStep === 1 && answers.size.text) || 
+                                  (currentStep === 2 && answers.sketch.text) || 
+                                  (currentStep === 3 && answers.style.text) ||
+                                  (currentStep === 4 && answers.place.text);
+                
+                if (hasAnswer) {
+                    nextBtn.removeAttribute('disabled');
+                    nextBtn.disabled = false;
+                } else {
+                    nextBtn.setAttribute('disabled', 'true');
+                    nextBtn.disabled = true;
+                }
             }
         }
+
         function calculateResult() {
+            const baseMin = answers.size.minVal;
+            const baseMax = answers.size.maxVal;
+            
             const totalPercent = answers.sketch.minVal + answers.style.minVal + answers.place.minVal;
-            const finalMin = answers.size.minVal + (answers.size.minVal * (totalPercent / 100));
-            const finalMax = answers.size.maxVal + (answers.size.maxVal * (totalPercent / 100));
+            
+            const finalMin = baseMin + (baseMin * (totalPercent / 100));
+            const finalMax = baseMax + (baseMax * (totalPercent / 100));
+            
             document.getElementById('totalPrice').innerText = `от ${finalMin.toLocaleString('ru-RU')} - до ${finalMax.toLocaleString('ru-RU')} руб.`;
-            document.getElementById('summaryList').innerHTML = `<li><b>Размер:</b> ${answers.size.text}</li><li><b>Подготовка:</b> ${answers.sketch.text}</li><li><b>Стиль:</b> ${answers.style.text}</li><li><b>Зона:</b> ${answers.place.text}</li>`;
+            
+            const summaryHTML = `
+                <li><b>Размер:</b> ${answers.size.text}</li>
+                <li><b>Подготовка:</b> ${answers.sketch.text}</li>
+                <li><b>Стиль исполнения:</b> ${answers.style.text}</li>
+                <li><b>Зона нанесения:</b> ${answers.place.text}</li>
+                <li><b>Суммарная наценка за сложность:</b> +${totalPercent}%</li>
+            `;
+            document.getElementById('summaryList').innerHTML = summaryHTML;
         }
+
         function finalSubmit() {
             if (tg && tg.sendData) {
-                tg.sendData(JSON.stringify({ ...answers, price: document.getElementById('totalPrice').innerText }));
-                document.getElementById('btnNext').innerText = "Отправлено!";
-                document.getElementById('btnNext').disabled = true;
-                document.getElementById('btnNext').style.backgroundColor = "#34c759";
-            } else { alert("Ошибка: нет доступа к Telegram"); }
+                const dataToSend = {
+                    size: answers.size.text,
+                    sketch: answers.sketch.text,
+                    style: answers.style.text,
+                    place: answers.place.text,
+                    totalPercent: answers.sketch.minVal + answers.style.minVal + answers.place.minVal,
+                    priceString: document.getElementById('totalPrice').innerText
+                };
+                
+                tg.sendData(JSON.stringify(dataToSend));
+                
+                // Кнопка меняется, окно остается открытым
+                const btn = document.getElementById('btnNext');
+                btn.innerText = "Отправлено мастеру!";
+                btn.style.backgroundColor = "#34c759";
+                btn.disabled = true;
+                btn.onclick = null;
+            } else {
+                alert("Ошибка: нет доступа к Telegram");
+            }
         }
     </script>
 </body>
