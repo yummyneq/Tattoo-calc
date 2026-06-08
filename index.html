@@ -320,7 +320,6 @@
             const backBtn = document.getElementById('btnBack');
             const nextBtn = document.getElementById('btnNext');
 
-            // Управление кнопкой "Назад"
             if (currentStep === 1) {
                 backBtn.setAttribute('disabled', 'true');
                 backBtn.disabled = true;
@@ -329,16 +328,13 @@
                 backBtn.disabled = false;
             }
 
-            // Логика отображения финального шага
             if (currentStep === totalSteps) {
                 calculateResult();
-                // Трансформируем правую кнопку "Далее" в кнопку отправки результата
                 nextBtn.innerText = "Отправить мастеру";
                 nextBtn.removeAttribute('disabled');
                 nextBtn.disabled = false;
                 nextBtn.onclick = finalSubmit;
             } else {
-                // Возвращаем стандартную кнопку "Далее", если пользователь вернулся назад
                 nextBtn.innerText = "Далее";
                 nextBtn.onclick = function() { changeStep(1); };
 
@@ -389,6 +385,7 @@
                     priceString: document.getElementById('totalPrice').innerText
                 };
                 tg.sendData(JSON.stringify(dataToSend));
+                tg.close();
             } else {
                 alert("Заявка успешно сформирована!");
             }
