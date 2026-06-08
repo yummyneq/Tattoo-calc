@@ -385,7 +385,11 @@
                     priceString: document.getElementById('totalPrice').innerText
                 };
                 tg.sendData(JSON.stringify(dataToSend));
-                tg.close();
+                
+                // Добавлена задержка для гарантии передачи данных
+                setTimeout(function() {
+                    tg.close();
+                }, 500);
             } else {
                 alert("Заявка успешно сформирована!");
             }
