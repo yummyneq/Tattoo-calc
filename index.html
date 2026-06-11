@@ -188,31 +188,43 @@
         <div class="step active" id="step1">
             <div class="question-title">Примерный размер татуировки:</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 1, 'Мини (от 5 - до 10 см)', 1000, 4000)">
-                    <span class="option-text">Мини (от 5 - до 10 см)</span>
-                    <span class="option-price">от 1 000 руб.</span>
+                <div class="option-card" onclick="selectOption(this, 1, 'Мини (до 5 см)', 2000, 2000)">
+                    <span class="option-text">Мини (до 5 см)</span>
+                    <span class="option-price">выбрать</span>
                 </div>
-                <div class="option-card" onclick="selectOption(this, 1, 'Средняя (от 10 - до 20 см)', 4000, 10000)">
-                    <span class="option-text">Средняя (от 10 - до 20 см)</span>
-                    <span class="option-price">от 4 000 руб.</span>
+                <div class="option-card" onclick="selectOption(this, 1, 'Средняя (5-15 см)', 5000, 5000)">
+                    <span class="option-text">Средняя (5-15 см)</span>
+                    <span class="option-price">выбрать</span>
                 </div>
-                <div class="option-card" onclick="selectOption(this, 1, 'Большая (от 20 - до 40 см)', 10000, 25000)">
-                    <span class="option-text">Большая (от 20 - до 40 см)</span>
-                    <span class="option-price">от 10 000 руб.</span>
+                <div class="option-card" onclick="selectOption(this, 1, 'Крупная (15-25 см)', 10000, 10000)">
+                    <span class="option-text">Крупная (15-25 см)</span>
+                    <span class="option-price">выбрать</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 1, 'Масштабная (рукав / спина)', 16000, 16000)">
+                    <span class="option-text">Масштабная (рукав / спина)</span>
+                    <span class="option-price">выбрать</span>
                 </div>
             </div>
         </div>
 
         <div class="step" id="step2">
-            <div class="question-title">Что у вас с эскизом?</div>
+            <div class="question-title">What у вас с эскизом?</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 2, 'Эскиз имеется', 0, 0)">
-                    <span class="option-text">Эскиз имеется</span>
-                    <span class="option-price">+0%</span>
+                <div class="option-card" onclick="selectOption(this, 2, 'Есть готовый эскиз', 0, 0)">
+                    <span class="option-text">Есть готовый эскиз</span>
+                    <span class="option-price">выбрать</span>
                 </div>
-                <div class="option-card" onclick="selectOption(this, 2, 'Нужно нарисовать эскиз', 25, 25)">
-                    <span class="option-text">Нужно нарисовать</span>
-                    <span class="option-price">+25%</span>
+                <div class="option-card" onclick="selectOption(this, 2, 'Нужна разработка с нуля', 25, 25)">
+                    <span class="option-text">Нужна разработка с нуля</span>
+                    <span class="option-price">выбрать</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 2, 'Есть идея, нужно доработать', 5, 5)">
+                    <span class="option-text">Есть идея, нужно доработать</span>
+                    <span class="option-price">выбрать</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 2, 'Перекрытие старой тату', 20, 20)">
+                    <span class="option-text">Перекрытие старой татуировки</span>
+                    <span class="option-price">выбрать</span>
                 </div>
             </div>
         </div>
@@ -220,17 +232,21 @@
         <div class="step" id="step3">
             <div class="question-title">Выберите стиль исполнения:</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 3, 'Графика / Эскизный', 0, 0)">
-                    <span class="option-text">Графика / Эскизный</span>
-                    <span class="option-price">+0%</span>
+                <div class="option-card" onclick="selectOption(this, 3, 'Тонкая графика / Линеар', 0, 0)">
+                    <span class="option-text">Тонкая графика / Линеар</span>
+                    <span class="option-price">выбрать</span>
                 </div>
-                <div class="option-card" onclick="selectOption(this, 3, 'Киберпанк / Орнаментал', 20, 20)">
-                    <span class="option-text">Киберпанк / Орнаментал</span>
-                    <span class="option-price">+20%</span>
-                </div>
-                <div class="option-card" onclick="selectOption(this, 3, 'Реализм / Блэкворк', 40, 40)">
+                <div class="option-card" onclick="selectOption(this, 3, 'Реализм / Блэкворк', 30, 30)">
                     <span class="option-text">Реализм / Блэкворк</span>
-                    <span class="option-price">+40%</span>
+                    <span class="option-price">выбрать</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 3, 'Традиционная / Олдскул', 25, 25)">
+                    <span class="option-text">Традиционная / Олдскул</span>
+                    <span class="option-price">выбрать</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 3, 'Цветная татуировка', 10, 10)">
+                    <span class="option-text">Цветная татуировка</span>
+                    <span class="option-price">выбрать</span>
                 </div>
             </div>
         </div>
@@ -238,17 +254,21 @@
         <div class="step" id="step4">
             <div class="question-title">Куда планируете наносить?</div>
             <div class="options-grid">
-                <div class="option-card" onclick="selectOption(this, 4, 'Рука / Нога (простая зона)', 0, 0)">
-                    <span class="option-text">Рука / Нога</span>
-                    <span class="option-price">+0%</span>
+                <div class="option-card" onclick="selectOption(this, 4, 'Предплечье / Икра', 0, 0)">
+                    <span class="option-text">Предплечье / Икра</span>
+                    <span class="option-price">выбрать</span>
                 </div>
-                <div class="option-card" onclick="selectOption(this, 4, 'Спина / Грудь (большая зона)', 20, 20)">
-                    <span class="option-text">Спина / Грудь</span>
-                    <span class="option-price">+20%</span>
+                <div class="option-card" onclick="selectOption(this, 4, 'Плечо / Бедро', 5, 5)">
+                    <span class="option-text">Плечо / Бедро</span>
+                    <span class="option-price">выбрать</span>
                 </div>
-                <div class="option-card" onclick="selectOption(this, 4, 'Ребра / Живот / Шея (сложная зона)', 30, 30)">
+                <div class="option-card" onclick="selectOption(this, 4, 'Ребра / Живот / Шея', 15, 15)">
                     <span class="option-text">Ребра / Живот / Шея</span>
-                    <span class="option-price">+30%</span>
+                    <span class="option-price">выбрать</span>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 4, 'Кисти / Стопы / Колени', 20, 20)">
+                    <span class="option-text">Кисти / Стопы / Колени</span>
+                    <span class="option-price">выбрать</span>
                 </div>
             </div>
         </div>
@@ -354,13 +374,13 @@
         }
 
         function calculateResult() {
-            const baseMin = answers.size.minVal;
-            const baseMax = answers.size.maxVal;
-            
+            const basePrice = answers.size.minVal; 
             const totalPercent = answers.sketch.minVal + answers.style.minVal + answers.place.minVal;
             
-            const finalMin = baseMin + (baseMin * (totalPercent / 100));
-            const finalMax = baseMax + (baseMax * (totalPercent / 100));
+            const calculatedPrice = basePrice + (basePrice * (totalPercent / 100));
+            
+            let finalMin = Math.round((calculatedPrice * 0.9) / 100) * 100;
+            let finalMax = Math.round((calculatedPrice * 1.1) / 100) * 100;
             
             document.getElementById('totalPrice').innerText = `от ${finalMin.toLocaleString('ru-RU')} - до ${finalMax.toLocaleString('ru-RU')} руб.`;
             
@@ -369,7 +389,6 @@
                 <li><b>Подготовка:</b> ${answers.sketch.text}</li>
                 <li><b>Стиль исполнения:</b> ${answers.style.text}</li>
                 <li><b>Зона нанесения:</b> ${answers.place.text}</li>
-                <li><b>Суммарная наценка за сложность:</b> +${totalPercent}%</li>
             `;
             document.getElementById('summaryList').innerHTML = summaryHTML;
         }
@@ -387,7 +406,6 @@
                 
                 tg.sendData(JSON.stringify(dataToSend));
                 
-                // Кнопка меняется, окно остается открытым
                 const btn = document.getElementById('btnNext');
                 btn.innerText = "Отправлено мастеру!";
                 btn.style.backgroundColor = "#34c759";
